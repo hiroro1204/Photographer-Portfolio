@@ -5,11 +5,13 @@ layout > container
 ------------------------------
 */
 .l-container-s {
-    width: min(90%, var(--width-content-s));
-    margin-inline: auto;
+  margin-inline: auto;
 }
 
 .l-container {
-    width: min(90%, var(--width-content));
-    margin-inline: auto;
+  padding-inline: 20rem;
+
+  @include g.mq() {
+    padding-inline: 30rem;
+  }
 }

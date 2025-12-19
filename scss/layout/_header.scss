@@ -4,5 +4,54 @@
 layout > header
 ------------------------------
 */
-.header {
+.l-header {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  z-index: var(--z-index-header);
+
+  @include g.mq() {
+    width: 100%;
+    padding-inline: 30rem;
+  }
+}
+
+.l-header-inner {
+  @include g.mq() {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.l-header-text {
+  display: none;
+
+  @include g.mq() {
+    display: block;
+  }
+}
+
+.l-header-nav {
+}
+
+.l-header-nav-list {
+  display: flex;
+  gap: 21rem;
+}
+
+.l-header-nav-list-item {
+  font-size: 13rem;
+
+  @include g.mq() {
+    font-size: 14rem;
+  }
+}
+
+.l-header-nav-list-item--current {
+  opacity: 0.5;
+}
+
+.l-header-text {
 }

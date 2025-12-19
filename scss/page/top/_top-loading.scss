@@ -1,6 +1,9 @@
 @use "../../global" as g;
 
 /*!
-page > top > top-kv
+page > top > top-loading
 ------------------------------
 */
+.top-loading {
+  display: none;
+}

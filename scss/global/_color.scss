@@ -3,5 +3,8 @@ global > color
 ------------------------------
 */
 :root {
-    --color-font-base: #333;
+  --color-font-base: #acacac;
+  --color-white: #fff;
+  --color-black: #151515;
+  --color-bg-stripe: color-mix(in srgb, #ff0000 10%, transparent);
 }

@@ -1,0 +1,44 @@
+@use "../global" as g;
+
+/*!
+component > bg-stripe
+------------------------------
+*/
+.c-bg-stripe {
+  /* ストライプ設定 */
+  --stripe-padding: 20rem; // remベースの余白
+  --stripe-gap: 20rem; // ギャップ（remベース）
+  --stripe-count: 4; // ストライプ本数
+
+  /* ストライプ幅の計算: (内側幅 − ギャップ総量) ÷ ストライプ本数 */
+  --inner-width: calc(100vw - (var(--stripe-padding) * 2));
+  --gap-total: calc(var(--stripe-gap) * (var(--stripe-count) - 1));
+  --stripe-width: calc(
+    (var(--inner-width) - var(--gap-total)) / var(--stripe-count)
+  );
+
+  position: fixed;
+  top: 0;
+  z-index: var(--z-index-bg-stripe);
+  pointer-events: none;
+
+  left: var(--stripe-padding);
+  width: calc(100% - (var(--stripe-padding) * 2));
+  height: 100%;
+
+  --stripe-unit: calc(var(--stripe-width) + var(--stripe-gap));
+
+  background-image: repeating-linear-gradient(
+    to right,
+    var(--color-bg-stripe) 0,
+    var(--color-bg-stripe) var(--stripe-width),
+    transparent var(--stripe-width),
+    transparent var(--stripe-unit)
+  );
+
+  @include g.mq() {
+    --stripe-padding: 30rem;
+    --stripe-gap: 20rem;
+    --stripe-count: 12;
+  }
+}
