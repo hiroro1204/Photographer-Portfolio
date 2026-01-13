@@ -11,5 +11,6 @@
     }
   ],
   "liveSassCompile.settings.showOutputWindowOn": "Warning",
-  "cSpell.words": ["Lume", "Theo"]
+  "cSpell.words": ["Lume", "Theo"],
+  "liveServer.settings.port": 5501
 }

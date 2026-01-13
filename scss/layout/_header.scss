@@ -39,18 +39,33 @@ layout > header
 .l-header-nav-list {
   display: flex;
   gap: 21rem;
+
+  @include g.mq() {
+    gap: 18rem;
+  }
 }
 
 .l-header-nav-list-item {
   font-size: 13rem;
+  line-height: normal;
 
   @include g.mq() {
     font-size: 14rem;
   }
+
+  a {
+    transition: filter 0.3s ease;
+
+    @media (any-hover: hover) {
+      &:hover {
+        filter: brightness(0.7);
+      }
+    }
+  }
 }
 
 .l-header-nav-list-item--current {
-  opacity: 0.5;
+  filter: brightness(0.7);
 }
 
 .l-header-text {

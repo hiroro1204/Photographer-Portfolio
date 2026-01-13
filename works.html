@@ -36,7 +36,7 @@
     <link rel="stylesheet" href="css/style.css" />
 
     <!-- js -->
-    <script src="js/main.js" defer></script>
+    <script src="js/main.js" type="module"></script>
   </head>
   <body>
     <!-- 背景装飾レイヤー -->
@@ -59,7 +59,7 @@
               <span>Works</span>
             </li>
             <li class="l-header-nav-list-item">
-              <a href="contact.html">Contact</a>
+              <a href="/">Contact</a>
             </li>
           </ul>
         </nav>
@@ -67,9 +67,383 @@
       </div>
     </header>
 
-    <main>
-      <!-- Worksページのコンテンツ -->
+    <main class="works-wrapper">
+      <h1 class="works-title c-title">Works</h1>
+      <div class="works-card-wrapper">
+        <ul class="l-works-grid">
+          <li
+            class="l-works-grid-item l-works-grid-item--top-left l-works-grid-item--pc-row1"
+          >
+            <article>
+              <button
+                class="c-works-card js-modal-open-button"
+                data-modal-open="work-modal-01"
+                aria-label="Charming Storefrontを表示"
+              >
+                <img
+                  src="img/image_works_01.jpg"
+                  alt="Charming Storefront"
+                  width="1800"
+                  height="2399"
+                />
+                <span class="c-works-card-title"> Charming Storefront </span>
+              </button>
+
+              <dialog
+                id="work-modal-01"
+                class="c-works-modal js-modal"
+                aria-labelledby="work-modal-01-title"
+              >
+                <div class="c-bg-stripe" aria-hidden="true"></div>
+                <div class="c-works-modal-inner l-container">
+                  <div class="c-works-modal-card c-works-modal-card--portrait">
+                    <img
+                      src="img/image_works_01.jpg"
+                      alt="Charming Storefront"
+                      width="1800"
+                      height="2399"
+                    />
+                    <div class="c-works-modal-text">
+                      <h2 id="work-modal-01-title" class="c-works-modal-title">
+                        Charming Storefront
+                      </h2>
+                      <span class="c-works-modal-year">2022</span>
+                    </div>
+                  </div>
+                </div>
+                <button
+                  class="c-works-modal-close js-modal-close-button"
+                  aria-label="閉じる"
+                >
+                  Close
+                </button>
+              </dialog>
+            </article>
+          </li>
+          <li
+            class="l-works-grid-item l-works-grid-item--right l-works-grid-item--pc-row2"
+          >
+            <article>
+              <button
+                class="c-works-card js-modal-open-button"
+                data-modal-open="work-modal-02"
+                aria-label="Party Celebration Sceneを表示"
+              >
+                <img
+                  src="img/image_works_02.jpg"
+                  alt="Party Celebration Scene"
+                  width="2239"
+                  height="2400"
+                />
+                <span class="c-works-card-title">
+                  Party Celebration Scene
+                </span>
+              </button>
+
+              <dialog
+                id="work-modal-02"
+                class="c-works-modal js-modal"
+                aria-labelledby="work-modal-02-title"
+              >
+                <div class="c-bg-stripe" aria-hidden="true"></div>
+                <div class="c-works-modal-inner l-container">
+                  <div class="c-works-modal-card">
+                    <img
+                      src="img/image_works_02.jpg"
+                      alt="Party Celebration Scene"
+                      width="2239"
+                      height="2400"
+                    />
+                    <div class="c-works-modal-text">
+                      <h2 id="work-modal-02-title" class="c-works-modal-title">
+                        Party Celebration Scene
+                      </h2>
+                      <span class="c-works-modal-year">2022</span>
+                    </div>
+                  </div>
+                </div>
+                <button
+                  class="c-works-modal-close js-modal-close-button"
+                  aria-label="閉じる"
+                >
+                  Close
+                </button>
+              </dialog>
+            </article>
+          </li>
+          <li
+            class="l-works-grid-item l-works-grid-item--text l-works-grid-item--pc-row2"
+          >
+            <div class="works-text works-text--left">
+              <p class="works-text-title">The Drama of Light and Shadow</p>
+              <p class="works-text-description works-text-description--small">
+                <span>Masterfully uses fleeting natural light to create </span>
+                <span>silhouettes and depth that tell a story.</span>
+              </p>
+            </div>
+          </li>
+          <li
+            class="l-works-grid-item l-works-grid-item--left l-works-grid-item--pc-row3"
+          >
+            <article>
+              <button
+                class="c-works-card js-modal-open-button"
+                data-modal-open="work-modal-03"
+                aria-label="Modern Minimalist Interiorを表示"
+              >
+                <img
+                  src="img/image_works_03.jpg"
+                  alt="Modern Minimalist Interior"
+                  width="1808"
+                  height="2400"
+                />
+                <span class="c-works-card-title">
+                  Modern Minimalist Interior
+                </span>
+              </button>
+
+              <dialog
+                id="work-modal-03"
+                class="c-works-modal js-modal"
+                aria-labelledby="work-modal-03-title"
+              >
+                <div class="c-bg-stripe" aria-hidden="true"></div>
+                <div class="c-works-modal-inner l-container">
+                  <div class="c-works-modal-card c-works-modal-card--portrait">
+                    <img
+                      src="img/image_works_03.jpg"
+                      alt="Modern Minimalist Interior"
+                      width="1808"
+                      height="2400"
+                    />
+                    <div class="c-works-modal-text">
+                      <h2 id="work-modal-03-title" class="c-works-modal-title">
+                        Modern Minimalist Interior
+                      </h2>
+                      <span class="c-works-modal-year">2022</span>
+                    </div>
+                  </div>
+                </div>
+                <button
+                  class="c-works-modal-close js-modal-close-button"
+                  aria-label="閉じる"
+                >
+                  Close
+                </button>
+              </dialog>
+            </article>
+          </li>
+          <li
+            class="l-works-grid-item l-works-grid-item--right l-works-grid-item--pc-row4"
+          >
+            <article>
+              <button
+                class="c-works-card js-modal-open-button"
+                data-modal-open="work-modal-04"
+                aria-label="Minimalist Tote Bagsを表示"
+              >
+                <img
+                  src="img/image_works_04.jpg"
+                  alt="Minimalist Tote Bags"
+                  width="1929"
+                  height="2400"
+                />
+                <span class="c-works-card-title"> Minimalist Tote Bags </span>
+              </button>
+
+              <dialog
+                id="work-modal-04"
+                class="c-works-modal js-modal"
+                aria-labelledby="work-modal-04-title"
+              >
+                <div class="c-bg-stripe" aria-hidden="true"></div>
+                <div class="c-works-modal-inner l-container">
+                  <div class="c-works-modal-card c-works-modal-card--portrait">
+                    <img
+                      src="img/image_works_04.jpg"
+                      alt="Minimalist Tote Bags"
+                      width="1929"
+                      height="2400"
+                    />
+                    <div class="c-works-modal-text">
+                      <h2 id="work-modal-04-title" class="c-works-modal-title">
+                        Minimalist Tote Bags
+                      </h2>
+                      <span class="c-works-modal-year">2022</span>
+                    </div>
+                  </div>
+                </div>
+                <button
+                  class="c-works-modal-close js-modal-close-button"
+                  aria-label="閉じる"
+                >
+                  Close
+                </button>
+              </dialog>
+            </article>
+          </li>
+          <li
+            class="l-works-grid-item l-works-grid-item--full l-works-grid-item--pc-row5"
+          >
+            <div class="works-text works-text--center">
+              <p class="works-text-title">Film-like Aesthetic</p>
+              <p class="works-text-description">
+                <span
+                  >Infuses digital photography with grain and soft tones,
+                </span>
+                <span>blending nostalgia with modern sensibility.</span>
+              </p>
+            </div>
+          </li>
+          <li
+            class="l-works-grid-item l-works-grid-item--full l-works-grid-item--pc-row6"
+          >
+            <article>
+              <button
+                class="c-works-card js-modal-open-button"
+                data-modal-open="work-modal-05"
+                aria-label="Grainy Film Effectを表示"
+              >
+                <img
+                  src="img/image_works_05.jpg"
+                  alt="Urban Motion Blur"
+                  width="2400"
+                  height="1600"
+                />
+                <span class="c-works-card-title"> Urban Motion Blur </span>
+              </button>
+
+              <dialog
+                id="work-modal-05"
+                class="c-works-modal js-modal"
+                aria-labelledby="work-modal-05-title"
+              >
+                <div class="c-bg-stripe" aria-hidden="true"></div>
+                <div class="c-works-modal-inner l-container">
+                  <div class="c-works-modal-card">
+                    <img
+                      src="img/image_works_05.jpg"
+                      alt="Urban Motion Blur"
+                      width="2400"
+                      height="1600"
+                    />
+                    <div class="c-works-modal-text">
+                      <h2 id="work-modal-05-title" class="c-works-modal-title">
+                        Urban Motion Blur
+                      </h2>
+                      <span class="c-works-modal-year">2022</span>
+                    </div>
+                  </div>
+                </div>
+                <button
+                  class="c-works-modal-close js-modal-close-button"
+                  aria-label="閉じる"
+                >
+                  Close
+                </button>
+              </dialog>
+            </article>
+          </li>
+          <li
+            class="l-works-grid-item l-works-grid-item--left l-works-grid-item--pc-row7"
+          >
+            <article>
+              <button
+                class="c-works-card js-modal-open-button"
+                data-modal-open="work-modal-06"
+                aria-label="Moving Subwayを表示"
+              >
+                <img
+                  src="img/image_works_06.jpg"
+                  alt="Moving Subway"
+                  width="1600"
+                  height="2400"
+                />
+                <span class="c-works-card-title">Moving Subway</span>
+              </button>
+
+              <dialog
+                id="work-modal-06"
+                class="c-works-modal js-modal"
+                aria-labelledby="work-modal-06-title"
+              >
+                <div class="c-bg-stripe" aria-hidden="true"></div>
+                <div class="c-works-modal-inner l-container">
+                  <div class="c-works-modal-card c-works-modal-card--portrait">
+                    <img
+                      src="img/image_works_06.jpg"
+                      alt="Moving Subway"
+                      width="1600"
+                      height="2400"
+                    />
+                    <div class="c-works-modal-text">
+                      <h2 id="work-modal-06-title" class="c-works-modal-title">
+                        Moving Subway
+                      </h2>
+                      <span class="c-works-modal-year">2022</span>
+                    </div>
+                  </div>
+                </div>
+                <button
+                  class="c-works-modal-close js-modal-close-button"
+                  aria-label="閉じる"
+                >
+                  Close
+                </button>
+              </dialog>
+            </article>
+          </li>
+          <li
+            class="l-works-grid-item l-works-grid-item--right l-works-grid-item--pc-row8"
+          >
+            <article>
+              <button
+                class="c-works-card js-modal-open-button"
+                data-modal-open="work-modal-07"
+                aria-label="Modern Art Galleryを表示"
+              >
+                <img
+                  src="img/image_works_07.jpg"
+                  alt="Modern Art Gallery"
+                  width="2400"
+                  height="1600"
+                />
+                <span class="c-works-card-title">Modern Art Gallery</span>
+              </button>
+
+              <dialog
+                id="work-modal-07"
+                class="c-works-modal js-modal"
+                aria-labelledby="work-modal-07-title"
+              >
+                <div class="c-bg-stripe" aria-hidden="true"></div>
+                <div class="c-works-modal-inner l-container">
+                  <div class="c-works-modal-card">
+                    <img
+                      src="img/image_works_07.jpg"
+                      alt="Modern Art Gallery"
+                      width="100"
+                      height="100"
+                    />
+                    <div class="c-works-modal-text">
+                      <h2 id="work-modal-07-title" class="c-works-modal-title">
+                        Modern Art Gallery
+                      </h2>
+                      <span class="c-works-modal-year">2022</span>
+                    </div>
+                  </div>
+                </div>
+                <button
+                  class="c-works-modal-close js-modal-close-button"
+                  aria-label="閉じる"
+                >
+                  Close
+                </button>
+              </dialog>
+            </article>
+          </li>
+        </ul>
+      </div>
     </main>
   </body>
 </html>
-

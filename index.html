@@ -36,7 +36,7 @@
     <link rel="stylesheet" href="css/style.css" />
 
     <!-- js -->
-    <script src="js/main.js" defer></script>
+    <script src="js/main.js" type="module" defer></script>
   </head>
   <body>
     <!-- 背景装飾レイヤー -->
@@ -61,7 +61,7 @@
         <nav class="l-header-nav">
           <ul class="l-header-nav-list">
             <li class="l-header-nav-list-item l-header-nav-list-item--current">
-              <a href="index.html">Home</a>
+              <span>Home</span>
             </li>
             <li class="l-header-nav-list-item">
               <a href="about.html">About</a>
@@ -70,7 +70,7 @@
               <a href="works.html">Works</a>
             </li>
             <li class="l-header-nav-list-item">
-              <a href="contact.html">Contact</a>
+              <a href="/">Contact</a>
             </li>
           </ul>
         </nav>
@@ -93,25 +93,25 @@
           <h2 class="top-selected-title">Selected</h2>
           <ul class="top-selected-list">
             <li class="top-selected-list-item">
-              <button>
+              <button data-image-index="1">
                 <span>Charming Storefront</span>
                 <span>2022</span>
               </button>
             </li>
             <li class="top-selected-list-item">
-              <button>
+              <button data-image-index="2">
                 <span>Party Celebration Scene</span>
                 <span>2022</span>
               </button>
             </li>
             <li class="top-selected-list-item">
-              <button>
+              <button data-image-index="3">
                 <span>Modern Minimalist Interior</span>
                 <span>2022</span>
               </button>
             </li>
             <li class="top-selected-list-item">
-              <button>
+              <button data-image-index="4">
                 <span>Urban Motion Blur</span>
                 <span>2022</span>
               </button>
@@ -120,7 +120,10 @@
         </section>
         <div class="top-images">
           <ul class="top-images-list">
-            <li class="top-images-list-item top-images-list-item--default">
+            <li
+              class="top-images-list-item top-images-list-item--active"
+              data-image-index="0"
+            >
               <img
                 src="img/image_top.jpg"
                 alt="image"
@@ -128,7 +131,7 @@
                 height="2400"
               />
             </li>
-            <li class="top-images-list-item">
+            <li class="top-images-list-item" data-image-index="1">
               <img
                 src="img/image_works_01.jpg"
                 alt="image"
@@ -136,7 +139,7 @@
                 height="2399"
               />
             </li>
-            <li class="top-images-list-item">
+            <li class="top-images-list-item" data-image-index="2">
               <img
                 src="img/image_works_02.jpg"
                 alt="image"
@@ -144,7 +147,7 @@
                 height="2400"
               />
             </li>
-            <li class="top-images-list-item">
+            <li class="top-images-list-item" data-image-index="3">
               <img
                 src="img/image_works_03.jpg"
                 alt="image"
@@ -152,7 +155,7 @@
                 height="2400"
               />
             </li>
-            <li class="top-images-list-item">
+            <li class="top-images-list-item" data-image-index="4">
               <img
                 src="img/image_works_05.jpg"
                 alt="image"

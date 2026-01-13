@@ -1,0 +1,117 @@
+@use "../global" as g;
+
+/*!
+component > works-modal
+------------------------------
+*/
+.c-works-modal {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-index-modal);
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  max-height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-black);
+  border: none;
+  overflow: hidden; // スクロールを無効化
+
+  &::backdrop {
+    display: none;
+  }
+}
+
+.c-works-modal-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+}
+
+.c-works-modal-card {
+  width: 100%;
+
+  @include g.mq() {
+    width: 593rem;
+  }
+
+  img {
+    height: 303rem;
+    object-fit: cover;
+
+    @include g.mq() {
+      height: 636rem;
+    }
+  }
+}
+
+.c-works-modal-card--portrait {
+  img {
+    object-position: 50% 70%;
+
+    @include g.mq() {
+      width: 479rem;
+      margin-inline: auto;
+      object-position: center;
+    }
+  }
+}
+
+.c-works-modal-text {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 12rem;
+  font-size: 12rem;
+  line-height: 1.5;
+
+  @include g.mq() {
+    margin-top: 16rem;
+    font-size: 16rem;
+  }
+}
+
+.c-works-modal-title {
+  @include g.mq() {
+  }
+}
+
+.c-works-modal-year {
+  display: block;
+
+  @include g.mq() {
+  }
+}
+
+.c-works-modal-close {
+  font-size: 14rem;
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+  gap: 6rem;
+  position: relative;
+  bottom: 45rem;
+  left: 50%;
+  translate: -50% 0;
+  background-color: transparent;
+  z-index: var(--z-index-modal);
+
+  @include g.mq() {
+    bottom: 60rem;
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    width: 10rem;
+    height: 9rem;
+    background-image: url("../../img/icon_close.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}

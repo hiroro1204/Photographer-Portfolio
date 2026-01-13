@@ -1,0 +1,162 @@
+@use "sass:list";
+@use "../global" as g;
+
+/*!
+layout > works-card-grid
+------------------------------
+*/
+
+.l-works-grid {
+  display: grid;
+  grid-template-columns: 109rem 159rem 88rem;
+
+  // --- SPサイズの設定 ---
+  $sp-row-heights: (
+    1: 360rem,
+    2: 310rem,
+    3: auto,
+    4: 304rem,
+    5: 419rem,
+    6: auto,
+    7: 323rem,
+    8: 266rem,
+    9: 235rem,
+  );
+
+  // SPのgrid-template-rowsを生成（高さのみ、自動配置のため行ライン名は不要）
+  $sp-grid-template-rows: ();
+  @each $row, $height in $sp-row-heights {
+    $sp-grid-template-rows: list.append($sp-grid-template-rows, $height, space);
+  }
+  grid-template-rows: $sp-grid-template-rows;
+  gap: 100rem 0; // SPの余白はgapで統一管理
+
+  @include g.mq() {
+    // --- PCサイズの設定 ---
+    grid-template-columns: 593rem 137rem 1fr;
+    gap: 0; // PCの余白は行（rows）の方で個別に制御するため 0 に設定
+
+    // PCサイズの行設定マップ：行番号 : (高さ, 次の行との余白)
+    $pc-row-plan: (
+      1: (
+        667rem,
+        57rem,
+      ),
+      2: (
+        667rem,
+        181rem,
+      ),
+      3: (
+        667rem,
+        151rem,
+      ),
+      4: (
+        667rem,
+        291rem,
+      ),
+      5: (
+        auto,
+        182rem,
+      ),
+      6: (
+        667rem,
+        258rem,
+      ),
+      7: (
+        667rem,
+        222rem,
+      ),
+      8: (
+        667rem,
+        473rem,
+      ),
+      9: (
+        0rem,
+        0rem,
+      ),
+    );
+
+    // PCのgrid-template-rowsを生成（行ライン名・高さ・余白を交互に）
+    $pc-grid-template-rows: ();
+    @each $row, $values in $pc-row-plan {
+      $height: list.nth($values, 1);
+      $gap: list.nth($values, 2);
+
+      // 各行にline名・高さ・余白をspace区切りで順番に追加する
+      $pc-grid-template-rows: list.append(
+        $pc-grid-template-rows,
+        unquote("[row#{$row}]"),
+        space
+      );
+      $pc-grid-template-rows: list.append(
+        $pc-grid-template-rows,
+        $height,
+        space
+      );
+      $pc-grid-template-rows: list.append($pc-grid-template-rows, $gap, space);
+    }
+
+    // 作成したリストをそのまま grid-template-rows に出力
+    grid-template-rows: $pc-grid-template-rows;
+  }
+}
+
+.l-works-grid-item {
+  > * {
+    height: 100%;
+  }
+
+  &.l-works-grid-item--left {
+    grid-column: 1 / 3;
+    padding-left: 20rem;
+
+    @include g.mq() {
+      padding: 0 19rem 0 147rem;
+    }
+  }
+
+  &.l-works-grid-item--top-left {
+    grid-column: 1 / 3;
+
+    @include g.mq() {
+      grid-column: 1 / 2;
+    }
+  }
+
+  &.l-works-grid-item--right {
+    grid-column: 2 / 4;
+
+    @include g.mq() {
+      grid-column: 3 / 4;
+      padding-right: 147rem;
+    }
+  }
+
+  &.l-works-grid-item--text {
+    grid-column: 1 / 4;
+    padding-left: 20rem;
+
+    @include g.mq() {
+      grid-column: 1 / 2;
+      padding-left: 30rem;
+    }
+  }
+
+  &.l-works-grid-item--full {
+    grid-column: 1 / 4;
+    padding-left: 20rem;
+
+    @include g.mq() {
+      padding-inline: 147rem;
+    }
+  }
+
+  // --- PC専用：行指定クラス ---
+  @include g.mq() {
+    @for $i from 1 through 10 {
+      &--pc-row#{$i} {
+        grid-row: unquote("row#{$i}");
+      }
+    }
+  }
+}

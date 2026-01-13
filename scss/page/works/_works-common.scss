@@ -1,0 +1,80 @@
+@use "../../global" as g;
+
+/*!
+page > works > works-common
+------------------------------
+*/
+
+.works-wrapper:has(dialog[open]) {
+  overflow-y: auto;
+  scrollbar-gutter: stable; /* スクロールバーのスペースを常に確保する */
+}
+
+.works-title {
+  padding: 20rem 0 0 20rem;
+
+  @include g.mq() {
+    padding: 38rem 0 0 30rem;
+  }
+}
+
+.works-card-wrapper {
+  padding: 60rem 0 166rem;
+
+  @include g.mq() {
+    padding: 116rem 0 0;
+  }
+}
+
+.works-text-wrapper {
+}
+
+.works-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12rem;
+  text-align: center;
+
+  @include g.mq() {
+    gap: 8rem;
+  }
+
+  .works-text-description {
+    span {
+      @include g.mq() {
+        display: block;
+      }
+    }
+  }
+}
+
+.works-text--left {
+  text-align: left;
+  align-items: start;
+
+  @include g.mq() {
+    padding-top: 267rem;
+    align-items: flex-start;
+  }
+
+  .works-text-description {
+    span {
+      display: block;
+    }
+  }
+}
+
+.works-text-title {
+  font-size: 16rem;
+  line-height: 1.5;
+
+  @include g.mq() {
+    font-size: 20rem;
+  }
+}
+
+.works-text-description--small {
+  @include g.mq() {
+  }
+}

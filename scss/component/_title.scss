@@ -5,4 +5,13 @@ component > title
 ------------------------------
 */
 .c-title {
+  font-size: 32rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.03em;
+
+  @include g.mq() {
+    font-size: 64rem;
+    line-height: normal;
+  }
 }

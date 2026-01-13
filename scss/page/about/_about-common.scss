@@ -4,3 +4,64 @@
 page > about > about-common
 ------------------------------
 */
+
+.about-wrapper {
+  padding-top: 20rem;
+  position: relative;
+  height: 100vh;
+
+  @include g.mq() {
+    padding-top: 38rem;
+  }
+}
+
+.about-text {
+  margin-top: 16rem;
+  height: calc(553 / 812 * 100vh);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @include g.mq() {
+    margin-top: 29rem;
+    display: grid;
+    grid-template-columns: repeat(2, 680rem);
+    gap: 20rem;
+    height: auto;
+  }
+}
+
+.about-image {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: calc(154 / 812 * 100vh);
+
+  @include g.mq() {
+    height: calc(379 / 1024 * 100vh);
+  }
+
+  img {
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%);
+  }
+}
+
+.about-image-text {
+  position: absolute;
+  bottom: 17rem;
+  left: 20rem;
+  width: 158rem;
+  font-size: 10rem;
+  line-height: normal;
+  color: var(--color-black);
+
+  @include g.mq() {
+    bottom: 30rem;
+    left: 30rem;
+    width: 310rem;
+    font-size: 12rem;
+  }
+}
