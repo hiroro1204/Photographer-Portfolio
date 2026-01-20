@@ -36,14 +36,15 @@
     <link rel="stylesheet" href="css/style.css" />
 
     <!-- js -->
-    <script src="js/main.js" type="module" defer></script>
+    <script src="js/vender/gsap.min.js" defer></script>
+    <script src="js/main.js" type="module"></script>
   </head>
   <body>
     <!-- 背景装飾レイヤー -->
-    <div class="c-bg-stripe" aria-hidden="true"></div>
+    <div class="js-page-content c-bg-stripe" aria-hidden="true"></div>
 
     <!-- loading -->
-    <div class="top-loading">
+    <div class="js-page-content top-loading">
       <div class="top-loading-inner">
         <h1 class="top-loading-title">
           <span class="u-block-sp">Photographer</span>
@@ -54,7 +55,7 @@
     </div>
 
     <!-- header -->
-    <header class="l-header">
+    <header class="js-header l-header">
       <div class="l-header-inner">
         <span class="l-header-text">Theo</span>
 
@@ -78,7 +79,7 @@
       </div>
     </header>
 
-    <main>
+    <main class="js-page-content">
       <div class="top-wrapper">
         <div class="top-intro">
           <p class="top-intro-text">

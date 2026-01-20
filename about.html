@@ -36,14 +36,15 @@
     <link rel="stylesheet" href="css/style.css" />
 
     <!-- js -->
-    <script src="js/main.js" defer></script>
+    <script src="js/vender/gsap.min.js" defer></script>
+    <script src="js/main.js" type="module"></script>
   </head>
   <body>
     <!-- 背景装飾レイヤー -->
-    <div class="c-bg-stripe" aria-hidden="true"></div>
+    <div class="js-page-content c-bg-stripe" aria-hidden="true"></div>
 
     <!-- header -->
-    <header class="l-header">
+    <header class="js-header l-header">
       <div class="l-header-inner">
         <span class="l-header-text">Theo</span>
 
@@ -67,7 +68,7 @@
       </div>
     </header>
 
-    <main>
+    <main class="js-page-content">
       <div class="about-wrapper">
         <div class="l-container">
           <h1 class="about-title c-title">About</h1>

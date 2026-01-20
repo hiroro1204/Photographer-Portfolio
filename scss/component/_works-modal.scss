@@ -29,48 +29,73 @@ component > works-modal
   height: 100%;
   display: grid;
   place-items: center;
+  padding-inline: 20rem;
+
+  @include g.mq(sm) {
+    padding-inline: 20vw;
+  }
 }
 
 .c-works-modal-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12rem;
+
+  @include g.mq(md) {
+    width: 593rem;
+    max-height: 75vh;
+    gap: 16rem;
+  }
+}
+
+.c-works-modal-card-image {
   width: 100%;
+  aspect-ratio: 335 / 312;
+  overflow: hidden;
 
   @include g.mq() {
-    width: 593rem;
+    aspect-ratio: 593 / 676;
   }
 
   img {
-    height: 303rem;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
 
     @include g.mq() {
-      height: 636rem;
+      aspect-ratio: 1024 / 636;
     }
   }
 }
 
 .c-works-modal-card--portrait {
-  img {
-    object-position: 50% 70%;
-
+  .c-works-modal-card-image {
     @include g.mq() {
       width: 479rem;
+      aspect-ratio: 479 / 676;
       margin-inline: auto;
-      object-position: center;
+    }
+
+    img {
+      @include g.mq() {
+      }
     }
   }
 }
 
+.c-works-modal-footer {
+  display: grid;
+}
+
 .c-works-modal-text {
-  width: 100%;
+  flex: 1;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 12rem;
   font-size: 12rem;
   line-height: 1.5;
 
   @include g.mq() {
-    margin-top: 16rem;
     font-size: 16rem;
   }
 }
@@ -93,12 +118,11 @@ component > works-modal
   display: flex;
   align-items: center;
   gap: 6rem;
-  position: relative;
+  background-color: transparent;
+  position: absolute;
   bottom: 45rem;
   left: 50%;
   translate: -50% 0;
-  background-color: transparent;
-  z-index: var(--z-index-modal);
 
   @include g.mq() {
     bottom: 60rem;

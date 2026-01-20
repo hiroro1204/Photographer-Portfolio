@@ -1,3 +1,8 @@
+/**
+ * component > image-changer
+ * トップページの画像を切り替える
+ */
+
 export const initializeImageSwitcher = () => {
   const buttons = document.querySelectorAll(
     ".top-selected-list-item button[data-image-index]"
@@ -36,4 +41,3 @@ export const initializeImageSwitcher = () => {
     });
   });
 };
-

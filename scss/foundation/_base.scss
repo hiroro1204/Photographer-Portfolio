@@ -30,3 +30,47 @@ body {
     font-size: 16rem;
   }
 }
+
+// // View Transitions APIの設定
+// // navigation: auto でページ遷移時に自動的にアニメーションを適用
+// @view-transition {
+//   navigation: auto;
+// }
+
+// // View Transitions APIのアニメーション設定
+// // ページ遷移時にフェードイン・フェードアウトアニメーションを適用
+// ::view-transition-old(root),
+// ::view-transition-new(root) {
+//   animation-duration: 1s;
+//   animation-timing-function: ease-in-out;
+//   // パフォーマンス最適化
+//   will-change: opacity;
+// }
+
+// // 前のページ：フェードアウト
+// ::view-transition-old(root) {
+//   animation-name: fade-out;
+// }
+
+// // 新しいページ：フェードイン
+// ::view-transition-new(root) {
+//   animation-name: fade-in;
+// }
+
+// @keyframes fade-out {
+//   from {
+//     opacity: 1;
+//   }
+//   to {
+//     opacity: 0;
+//   }
+// }
+
+// @keyframes fade-in {
+//   from {
+//     opacity: 0;
+//   }
+//   to {
+//     opacity: 1;
+//   }
+// }

@@ -70,3 +70,8 @@ layout > header
 
 .l-header-text {
 }
+
+// 遷移中のヘッダー操作を無効化
+.l-header.is-lock {
+  pointer-events: none;
+}
