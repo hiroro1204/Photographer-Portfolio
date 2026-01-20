@@ -35,6 +35,21 @@
     <!-- css -->
     <link rel="stylesheet" href="css/style.css" />
 
+    <!-- ページ遷移アニメーション用：読み込み直後に要素を非表示にする（チラつき防止） -->
+    <script>
+      // sessionStorageにフラグがある場合（ページ遷移時）のみ、要素を非表示にする
+      (function () {
+        if (sessionStorage.getItem("pt")) {
+          // 即座に実行して、要素が表示される前に非表示にする
+          // GSAPでアニメーションできるように、インラインスタイルで設定（!importantは使わない）
+          var style = document.createElement("style");
+          style.id = "page-transition-hide";
+          style.textContent = ".js-page-content { opacity: 0; }";
+          document.head.appendChild(style);
+        }
+      })();
+    </script>
+
     <!-- js -->
     <script src="js/vender/gsap.min.js" defer></script>
     <script src="js/main.js" type="module"></script>
