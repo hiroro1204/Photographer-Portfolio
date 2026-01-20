@@ -25,6 +25,8 @@ export const initializePageTransition = () => {
   };
 
   // sessionStorageのフラグキー
+  // ページ遷移アニメーションフラグのセッション保持用キーを定義しておくことで、
+  // 遷移先ページで「フェードインアニメーションを実行するかどうか」の判定（初回ロードは不要/遷移時のみ必要/直接アクセス時は不要）ができるため
   const TRANSITION_FLAG = "pt";
 
   // 遷移中フラグ（連続クリックを防ぐ）
@@ -108,6 +110,12 @@ export const initializePageTransition = () => {
 
     // フラグを削除
     sessionStorage.removeItem(TRANSITION_FLAG);
+
+    // 追加したstyleタグを削除（GSAPがアニメーションできるようにする）
+    const hideStyle = document.getElementById("page-transition-hide");
+    if (hideStyle) {
+      hideStyle.remove();
+    }
 
     // requestAnimationFrameを使って次のフレームで実行
     requestAnimationFrame(() => {
